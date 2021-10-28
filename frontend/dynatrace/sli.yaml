@@ -1,0 +1,3 @@
+spec_version: 0.1.4
+indicators:
+  rt_p95: metricSelector=::names
