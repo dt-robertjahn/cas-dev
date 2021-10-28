@@ -258,7 +258,7 @@
       "configured": true,
       "customName": "Single value",
       "bounds": {
-        "top": 608,
+        "top": 76,
         "left": 266,
         "width": 266,
         "height": 228
@@ -300,7 +300,7 @@
       "configured": true,
       "customName": "Single value",
       "bounds": {
-        "top": 608,
+        "top": 76,
         "left": 532,
         "width": 266,
         "height": 228
@@ -885,43 +885,12 @@
       ]
     },
     {
-      "name": "Response Time by Test Step;sli=kpi_rt;pass=\u003c600,\u003c=+15%;warning=\u003c=1000;key=true",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "customName": "Data explorer results",
-      "bounds": {
-        "top": 228,
-        "left": 0,
-        "width": 798,
-        "height": 380
-      },
-      "tileFilter": {
-        "timeframe": ""
-      },
-      "queries": [
-        {
-          "id": "A",
-          "metric": "calc:service.teststepresponsetime",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [
-            "Test Step"
-          ],
-          "filterBy": {
-            "filterOperator": "AND",
-            "nestedFilters": [],
-            "criteria": []
-          }
-        }
-      ]
-    },
-    {
-      "name": "Response time (P95);sli=rt_p95;pass=\u003c600,\u003c=+15%;warning=\u003c=1000;key=true",
+      "name": "Response time (P95)",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "customName": "Single value",
       "bounds": {
-        "top": 608,
+        "top": 76,
         "left": 0,
         "width": 266,
         "height": 228
@@ -938,6 +907,44 @@
           "splitBy": []
         }
       ]
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Response time (P95);sli=rt_p95;pass=\u003c600,\u003c=+15%;warning=\u003c=1000;key=true",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "TIMESERIES",
+          "series": [
+            {
+              "metric": "builtin:service.response.time",
+              "aggregation": "PERCENTILE",
+              "percentile": 95,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {}
+      }
     }
   ]
 }
