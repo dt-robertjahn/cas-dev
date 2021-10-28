@@ -1,0 +1,12 @@
+spec_version: ""
+filter: {}
+comparison:
+  compare_with: several_results
+  include_result_with_score: pass
+  number_of_comparison_results: 3
+  aggregate_function: avg
+objectives:
+- null
+total_score:
+  pass: 85%
+  warning: 80%
