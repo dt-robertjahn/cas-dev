@@ -916,7 +916,7 @@
       ]
     },
     {
-      "name": "Response time (P95)",
+      "name": "Response time (P95);sli=rt_p95;pass=\u003c600,\u003c=+15%;warning=\u003c=1000;key=true",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "customName": "Single value",
