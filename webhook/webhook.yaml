@@ -4,12 +4,6 @@ metadata:
   name: webhook-configuration
 spec:
   webhooks:
-    - type: sh.keptn.event.evaluation.>
-      requests:
-        - "curl --request POST --data '{  \"text\": \"Evaluation in
-          {{.data.stage}} finished with result {{.data.result}}}'
-          https://webhook.site/cc1ce4b8-fe9f-4b0d-a3e2-1b53ca7385ec"
-      subscriptionID: 2868daa0-c9cb-4b68-bcb2-04cfab4a9d1f
     - type: sh.keptn.event.test.triggered
       requests:
         - curl --request POST --data '{"type":"Test in {{.type}}","time":"Test
