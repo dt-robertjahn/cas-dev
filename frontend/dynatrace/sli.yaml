@@ -1,3 +1,3 @@
 spec_version: 0.1.4
 indicators:
-  rt_p95: metricSelector=::names
+  rt_p95: MV2;MicroSecond;metricSelector=builtin:service.response.time:merge("dt.entity.service"):percentile(95.000000):names&entitySelector=type(SERVICE)
