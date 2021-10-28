@@ -1,0 +1,943 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      5
+    ],
+    "clusterVersion": "1.231.0.20211028-133850"
+  },
+  "id": "c5efba64-18cb-4b37-b035-f4a929077245",
+  "dashboardMetadata": {
+    "name": "KQG;project=dt-orders;service=frontend;stage=dev",
+    "shared": true,
+    "owner": "rob.jahn@dynatrace.com",
+    "sharingDetails": {
+      "linkShared": false,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "-1h"
+    },
+    "tags": [
+      "Keptn",
+      "Easytravel",
+      "CloudAutomation",
+      "Performance as a Service"
+    ]
+  },
+  "tiles": [
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "markdown": "KQG.Total.Pass=85%;KQG.Total.Warning=80%;KQG.Compare.WithScore=pass;KQG.Compare.Results=3;KQG.Compare.Function=avg\n",
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 836,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": ""
+      }
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "markdown": "### Architectural Evaluation - Database Calls and Intertier-Calls",
+      "bounds": {
+        "top": 760,
+        "left": 798,
+        "width": 912,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": ""
+      }
+    },
+    {
+      "name": "CPU time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 228,
+        "left": 950,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.cpu.time",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Throughput (Request Count)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 342,
+        "left": 798,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.requestCount.total",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation Frontend ",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Exceptions Count by Test Step;sli=kpi_et_ex;pass=\u003c=100;warning=\u003c=200;weight=2;key=true",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 228,
+        "left": 1254,
+        "width": 456,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "calc:service.exceptionsbyteststep",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "",
+            "nestedFilters": [],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "IO time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 494,
+        "left": 950,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.ioTime",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lock time",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 494,
+        "left": 1254,
+        "width": 456,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.lockTime",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Response time (P90)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Single value",
+      "bounds": {
+        "top": 608,
+        "left": 266,
+        "width": 266,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.response.time",
+          "spaceAggregation": "PERCENTILE_90",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Response time (P50)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Single value",
+      "bounds": {
+        "top": 608,
+        "left": 532,
+        "width": 266,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": null
+        }
+      ]
+    },
+    {
+      "name": "Error count",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 228,
+        "left": 798,
+        "width": 152,
+        "height": 114
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.errors.total.count",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 1710,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Error count;sli=error_count;pass=\u003c2;warning=\u003c=5;weight=2;key=true",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.errors.total.count",
+              "aggregation": "NONE",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 798,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Throughput (Request Count);sli=throughput_svc;pass=\u003e5000;key=true",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.requestCount.total",
+              "aggregation": "NONE",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "SPECIFIC_ENTITIES": [
+              "SERVICE-83EAFA44D6C83E3E"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 1710,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "CPU time;sli=cpu_time;pass=\u003c150000,\u003c=+10%;warning=\u003c+20%",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.cpu.perRequest",
+              "aggregation": "SUM",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 1710,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "IO time;sli=io_time;pass=\u003c2500000,\u003c=+10%;warning=\u003c+20%",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.ioTime",
+              "aggregation": "NONE",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 1710,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Lock time;sli=lock_time;pass=\u003c100,\u003c=+10%;warning=\u003c+20%",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.lockTime",
+              "aggregation": "NONE",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 1254,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "DB calls;sli=db_calls;pass=\u003c22000,\u003c=+10%;warning=\u003c+20%",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.dbChildCallCount",
+              "aggregation": "NONE",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 798,
+        "width": 152,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Non DB calls;sli=non_db_calls;pass=\u003c45000,\u003c=+10%;warning=\u003c+20%",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.nonDbChildCallCount",
+              "aggregation": "NONE",
+              "percentile": null,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 532,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Response time (P50);sli=svc_rt_p50;pass=\u003c2;warning=\u003c3;weight=2;key=true",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.response.time",
+              "aggregation": "PERCENTILE",
+              "percentile": 50,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 266,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Response time (P90);sli=svc_rt_p90;pass=\u003c110;warning=\u003c350;weight=2;key=true",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.response.time",
+              "aggregation": "PERCENTILE",
+              "percentile": 90,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "",
+      "tileType": "CUSTOM_CHARTING",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 0,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "filterConfig": {
+        "type": "MIXED",
+        "customName": "Response time (P95);sli=svc_rt_p95;pass=\u003c1100;warning=\u003c2000;weight=2;key=true",
+        "defaultName": "Custom chart",
+        "chartConfig": {
+          "legendShown": true,
+          "type": "SINGLE_VALUE",
+          "series": [
+            {
+              "metric": "builtin:service.response.time",
+              "aggregation": "PERCENTILE",
+              "percentile": 95,
+              "type": "LINE",
+              "entityType": "SERVICE",
+              "dimensions": [],
+              "sortAscending": false,
+              "sortColumn": true,
+              "aggregationRate": "TOTAL"
+            }
+          ],
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": {
+          "SERVICE": {
+            "AUTO_TAGS": [
+              "CloudAutomation EasyTravel"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "DB calls",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 798,
+        "left": 1406,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.dbChildCallCount",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Non DB calls",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 798,
+        "left": 950,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:service.nonDbChildCallCount",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.service",
+                "filterType": "TAG",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "CloudAutomation EasyTravel",
+                    "evaluator": "IN"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Response Time by Test Step;sli=kpi_rt;pass=\u003c600,\u003c=+15%;warning=\u003c=1000;key=true",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Data explorer results",
+      "bounds": {
+        "top": 228,
+        "left": 0,
+        "width": 798,
+        "height": 380
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "calc:service.teststepresponsetime",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "Test Step"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [],
+            "criteria": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "Response time (P95)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Single value",
+      "bounds": {
+        "top": 608,
+        "left": 0,
+        "width": 266,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "",
+          "spaceAggregation": "",
+          "timeAggregation": "DEFAULT",
+          "splitBy": []
+        }
+      ]
+    }
+  ]
+}
