@@ -25,6 +25,7 @@ spec:
         - curl --request POST --data '{"event":"{{.type}}","text":"Service =
           {{.data.service}} and status = {{.data.status}}"}'
           https://webhook.site/cc1ce4b8-fe9f-4b0d-a3e2-1b53ca7385ec
+      subscriptionID: b89103c4-d163-4125-8c89-fc8de68be624
     - type: sh.keptn.event.mytask.started
       requests:
         - curl --request POST --data '{"event":"{{.type}}","text":"In stage =
