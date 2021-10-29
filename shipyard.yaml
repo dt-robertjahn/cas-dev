@@ -6,8 +6,9 @@ spec:
   stages:
     - name: "dev"
       sequences:
-      - name: "delivery"
+      - name: "mydelivery"
         tasks: 
+        - name: "mytask"
         - name: "test"
         - name: "evaluation"
           properties:
