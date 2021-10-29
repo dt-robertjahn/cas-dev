@@ -5,6 +5,7 @@ metadata:
 spec:
   webhooks:
     - type: sh.keptn.event.test.>
+      sendFinished: false
       requests:
         - curl --request POST --data
           '{"type":"TEST","event":"{{.type}}","text":"Test in {{.data.service}}
