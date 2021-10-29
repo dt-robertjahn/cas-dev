@@ -10,3 +10,5 @@ spec:
         tasks: 
         - name: "test"
         - name: "evaluation"
+          properties:
+            timeframe: "6m"
