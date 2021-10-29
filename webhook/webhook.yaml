@@ -25,3 +25,10 @@ spec:
           {{.data.stage}}"}'
           https://webhook.site/cc1ce4b8-fe9f-4b0d-a3e2-1b53ca7385ec
       subscriptionID: 46be1f6e-77ad-4af6-b3ff-20b1ae80239d
+    - type: sh.keptn.event.evaluation.finished
+      requests:
+        - curl --request POST --data '{"event":"{{.type}}","text":"Stage =
+          {{.data.stage}} finished with result =
+          {{.data.result}}","score":"{{.data.evaluation.score}}","url":"{{.data.labels.Dashboard
+          Link}}"}' https://webhook.site/cc1ce4b8-fe9f-4b0d-a3e2-1b53ca7385ec
+      subscriptionID: 2868daa0-c9cb-4b68-bcb2-04cfab4a9d1f
