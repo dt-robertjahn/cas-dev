@@ -9,7 +9,6 @@ spec:
       - name: "mydelivery"
         tasks: 
         - name: "mytask"
-        - name: "test"
         - name: "evaluation"
           properties:
             timeframe: "6m"
