@@ -12,6 +12,7 @@ spec:
           https://webhook.site/cc1ce4b8-fe9f-4b0d-a3e2-1b53ca7385ec
       subscriptionID: 2868daa0-c9cb-4b68-bcb2-04cfab4a9d1f
     - type: sh.keptn.event.test.triggered
+      sendFinished: false
       requests:
         - curl --request POST --data
           '{"type":"TEST-TRIGGERED","event":"{{.type}}","text":"Test in
