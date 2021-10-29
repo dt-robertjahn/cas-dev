@@ -8,4 +8,5 @@ spec:
       sequences:
       - name: "delivery"
         tasks: 
+        - name: "test"
         - name: "evaluation"
