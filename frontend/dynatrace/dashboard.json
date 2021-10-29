@@ -253,72 +253,6 @@
       ]
     },
     {
-      "name": "Response time (P90)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "customName": "Single value",
-      "bounds": {
-        "top": 76,
-        "left": 266,
-        "width": 266,
-        "height": 228
-      },
-      "tileFilter": {
-        "timeframe": ""
-      },
-      "queries": [
-        {
-          "id": "A",
-          "metric": "builtin:service.response.time",
-          "spaceAggregation": "PERCENTILE_90",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "filterBy": {
-            "filterOperator": "AND",
-            "nestedFilters": [
-              {
-                "filter": "dt.entity.service",
-                "filterType": "TAG",
-                "filterOperator": "OR",
-                "nestedFilters": [],
-                "criteria": [
-                  {
-                    "value": "CloudAutomation EasyTravel",
-                    "evaluator": "IN"
-                  }
-                ]
-              }
-            ],
-            "criteria": []
-          }
-        }
-      ]
-    },
-    {
-      "name": "Response time (P50)",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "customName": "Single value",
-      "bounds": {
-        "top": 76,
-        "left": 532,
-        "width": 266,
-        "height": 228
-      },
-      "tileFilter": {
-        "timeframe": ""
-      },
-      "queries": [
-        {
-          "id": "A",
-          "metric": "",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": null
-        }
-      ]
-    },
-    {
       "name": "Error count",
       "tileType": "DATA_EXPLORER",
       "configured": true,
@@ -945,6 +879,54 @@
         },
         "filtersPerEntityType": {}
       }
+    },
+    {
+      "name": "Response time (P90)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Single value",
+      "bounds": {
+        "top": 76,
+        "left": 266,
+        "width": 266,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "",
+          "spaceAggregation": "",
+          "timeAggregation": "DEFAULT",
+          "splitBy": []
+        }
+      ]
+    },
+    {
+      "name": "Response time (P50)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "customName": "Single value",
+      "bounds": {
+        "top": 76,
+        "left": 532,
+        "width": 266,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "",
+          "spaceAggregation": "",
+          "timeAggregation": "DEFAULT",
+          "splitBy": []
+        }
+      ]
     }
   ]
 }
