@@ -31,3 +31,14 @@ spec:
           {{.data.result}}","score":"{{.data.evaluation.score}}"}'
           https://webhook.site/cc1ce4b8-fe9f-4b0d-a3e2-1b53ca7385ec
       subscriptionID: 2868daa0-c9cb-4b68-bcb2-04cfab4a9d1f
+    - type: sh.keptn.event.evaluation.triggered
+      requests:
+        - "curl --header 'token: {{.env.secret_pagerduty_token}}' --request POST
+          --data '{{.data.message}}' https://PLACEHODER.pagerduty.com/api"
+      envFrom:
+        - name: secret_pagerduty_token
+          secretRef:
+            name: pagerduty
+            key: token
+      subscriptionID: 045f12f5-cc0f-4f19-aa3f-e0d58064bb8c
+      sendFinished: false
