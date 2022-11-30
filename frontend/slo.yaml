@@ -1,22 +1,219 @@
 spec_version: ""
 filter: {}
 comparison:
-  compare_with: several_results
-  include_result_with_score: pass
-  number_of_comparison_results: 3
-  aggregate_function: avg
+    compare_with: several_results
+    include_result_with_score: pass
+    number_of_comparison_results: 3
+    aggregate_function: avg
 objectives:
-- sli: rt_p95
-  displayName: ""
-  pass:
-  - criteria:
-    - <600
-    - <=+15%
-  warning:
-  - criteria:
-    - <=1000
-  weight: 1
-  key_sli: true
+    - sli: cpu_time
+      displayName: CPU time
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: throughput_(request_count)
+      displayName: Throughput (Request Count)
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: kpi_et_ex
+      displayName: Exceptions Count by Test Step
+      pass:
+        - criteria:
+            - <=100
+      warning:
+        - criteria:
+            - <=200
+      weight: 2
+      key_sli: true
+    - sli: io_time
+      displayName: IO time
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: lock_time
+      displayName: Lock time
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: error_count
+      displayName: Error count
+      pass:
+        - criteria:
+            - '>=0.000000'
+            - <2.000000
+      warning:
+        - criteria:
+            - '>=0.000000'
+            - <5.000000
+      weight: 1
+      key_sli: false
+    - sli: error_count
+      displayName: Error count
+      pass:
+        - criteria:
+            - <2
+      warning:
+        - criteria:
+            - <=5
+      weight: 2
+      key_sli: true
+    - sli: throughput_svc
+      displayName: Throughput (Request Count)
+      pass:
+        - criteria:
+            - '>5000'
+      warning: []
+      weight: 1
+      key_sli: true
+    - sli: cpu_time
+      displayName: CPU time
+      pass:
+        - criteria:
+            - <150000
+            - <=+10%
+      warning:
+        - criteria:
+            - <+20%
+      weight: 1
+      key_sli: false
+    - sli: io_time
+      displayName: IO time
+      pass:
+        - criteria:
+            - <2500000
+            - <=+10%
+      warning:
+        - criteria:
+            - <+20%
+      weight: 1
+      key_sli: false
+    - sli: lock_time
+      displayName: Lock time
+      pass:
+        - criteria:
+            - <100
+            - <=+10%
+      warning:
+        - criteria:
+            - <+20%
+      weight: 1
+      key_sli: false
+    - sli: db_calls
+      displayName: DB calls
+      pass:
+        - criteria:
+            - <22000
+            - <=+10%
+      warning:
+        - criteria:
+            - <+20%
+      weight: 1
+      key_sli: false
+    - sli: non_db_calls
+      displayName: Non DB calls
+      pass:
+        - criteria:
+            - <45000
+            - <=+10%
+      warning:
+        - criteria:
+            - <+20%
+      weight: 1
+      key_sli: false
+    - sli: svc_rt_p50
+      displayName: Response time (P50)
+      pass:
+        - criteria:
+            - <2
+      warning:
+        - criteria:
+            - <3
+      weight: 2
+      key_sli: true
+    - sli: svc_rt_p90
+      displayName: Response time (P90)
+      pass:
+        - criteria:
+            - <110
+      warning:
+        - criteria:
+            - <350
+      weight: 2
+      key_sli: true
+    - sli: svc_rt_p95
+      displayName: Response time (P95)
+      pass:
+        - criteria:
+            - <1100
+      warning:
+        - criteria:
+            - <2000
+      weight: 2
+      key_sli: true
+    - sli: db_calls
+      displayName: DB calls
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: non_db_calls
+      displayName: Non DB calls
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: response_time_(p95)
+      displayName: Response time (P95)
+      pass:
+        - criteria:
+            - '>=0.000000'
+            - <1500000.000000
+      warning:
+        - criteria:
+            - '>=0.000000'
+            - <2000000.000000
+      weight: 1
+      key_sli: false
+    - sli: rt_p95
+      displayName: Response time (P95)
+      pass:
+        - criteria:
+            - <600
+            - <=+15%
+      warning:
+        - criteria:
+            - <=1000
+      weight: 1
+      key_sli: true
+    - sli: response_time_(p90)
+      displayName: Response time (P90)
+      pass:
+        - criteria:
+            - '>=0.000000'
+            - <1500000.000000
+      warning:
+        - criteria:
+            - '>=0.000000'
+            - <2000000.000000
+      weight: 1
+      key_sli: false
+    - sli: response_time_(p50)
+      displayName: Response time (P50)
+      pass:
+        - criteria:
+            - '>=0.000000'
+            - <1500000.000000
+      warning:
+        - criteria:
+            - '>=0.000000'
+            - <2000000.000000
+      weight: 1
+      key_sli: false
 total_score:
-  pass: 85%
-  warning: 80%
+    pass: 85%
+    warning: 80%
